@@ -14,12 +14,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Compile C Code
+      - name: Install MinGW (Windows Compiler)
         run: |
-          gcc -Wall main.c -o calculator
+          sudo apt-get update
+          sudo apt-get install -y mingw-w64
+
+      - name: Compile C Code for Windows
+        run: |
+          x86_64-w64-mingw32-gcc -Wall main.c -o calculator.exe
 
       - name: Upload calc Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: calculator-executable
-          path: calculator
+          name: calculator-windows-executable
+          path: calculator.exe
