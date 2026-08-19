@@ -17,7 +17,7 @@ jobs:
 
     - name: Compile C code
       run: |
-        gcc calculator.c -o calculator.exe
+        gcc main.c -o calculator.exe
 
     - name: Create Release and Upload EXE
       uses: softprops/action-gh-release@v1
