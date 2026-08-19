@@ -6,7 +6,7 @@ char op;
 int result;
 int main()
 {
-	SetConsoleOutpootCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
 	SetConsoleCP(CP_UTF8);
 	printf ("בבקשה הזן את המספר הראשון/pleas enter this one namber");
 scanf (" %d", &one);
