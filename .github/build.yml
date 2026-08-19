@@ -1,20 +1,25 @@
-name build to x64
+name: build to x64
+
 on:
-push:
-branches {"main", "master"}
-pull request:
-branches: {"main", "master"}
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
 jobs:
-build:
-ubunto-run: ubunto-run
-steps:
-- name: Checkout Repository
-uses: actions/checkout@v4
-- name: Compile C Code
-run: |
-gcc -Wall main.c -o calculator
-- name: upload calc Artifact
-uses: actions/upload-artifact@v4
-with:
-name: calculator-executable
-path: calculator
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Compile C Code
+        run: |
+          gcc -Wall main.c -o calculator
+
+      - name: Upload calc Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: calculator-executable
+          path: calculator
