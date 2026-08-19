@@ -8,11 +8,11 @@ int main()
 {
 	SetConsoleOutputCP(CP_UTF8);
 	SetConsoleCP(CP_UTF8);
-	printf ("בבקשה הזן את המספר הראשון/pleas enter this one namber");
+	printf ("ןאשראה רפסמה תא ןזה השקבב/pleas enter this one namber");
 scanf (" %d", &one);
-printf ("הזן את האופרטור/pleas enter this operator");
+printf ("רוטרפוא הה תא ןזה/pleas enter this operator");
 scanf (" %c", &op);
-printf ("בבקשה הזן את המספר השני/pleas enter this second number");
+printf ("יונשה רפסמה תא ןזה השקבב/pleas enter this second number");
 scanf (" %d", &thu);
 if (op == '+') result = one + thu;
 else
